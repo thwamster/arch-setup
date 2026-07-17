@@ -28,6 +28,8 @@ cp "$REPO_DIR/.gitignore" ~/templates/git/.gitignore
 if [ -f "$REPO_DIR/.env" ]; then
     export $(grep -v '^#' "$REPO_DIR/.env" | xargs)
 	gh auth setup-git
+	git config --global user.email "thwamster@gmail.com"
+	git config --global user.name "thwamster"
 fi
 
 source ~/.bashrc

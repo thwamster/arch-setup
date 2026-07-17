@@ -119,6 +119,8 @@ alias rm='rm -I'
 alias ls='ls --all --color=auto --classify --group-directories-first'
 alias reload='source ~/.bashrc'
 
+export LS_COLORS="$LS_COLORS:ow=1;34:tw=1;34:"
+
 # Navigation
 alias home="cd $WIN_HOME"
 alias uhome="cd /usr/"

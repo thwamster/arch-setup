@@ -10,6 +10,7 @@ sudo pacman -S --needed --noconfirm - < "$CONFIG_DIR/dependencies.txt"
 
 mkdir -p ~/.local/share/fonts ~/templates ~/templates/git ~/.vim/colors ~/.config/nvim/colors ~/.config/nvim
 
+cp "$CONFIG_DIR/.bash_profile" ~/.bash_profile
 cp "$CONFIG_DIR/.bashrc" ~/.bashrc
 cp "$CONFIG_DIR/.gitignore_global" ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global

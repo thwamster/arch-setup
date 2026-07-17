@@ -1,4 +1,4 @@
-# thwamster's .vimrc
+" thwamster's .vimrc
 
 set tabstop=4 
 set shiftwidth=4 
@@ -21,10 +21,6 @@ if executable(s:clip)
 		autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
 	augroup END
 endif
-
-source /etc/vim/autoload/plug.vim
-call plug#begin()
-call plug#end()
 
 autocmd vimenter * colorscheme fairyfloss
 

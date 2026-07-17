@@ -1,0 +1,15 @@
+base-devel
+btop
+cmake
+curl
+ffmpeg
+fzf
+git
+github-cli
+jdk-openjdk
+neovim
+ripgrep
+tar
+unzip
+vim
+wget

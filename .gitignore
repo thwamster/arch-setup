@@ -1,0 +1,15 @@
+*.app
+*.dll
+*.dylib
+*.elf
+*.exe
+*.ko
+*.log
+*.o
+*.obj
+*.out
+*.so
+.env
+bin/
+build/
+out/

@@ -1,0 +1,15 @@
+build-essential
+btop
+cmake
+curl
+ffmpeg
+fzf
+git
+gh
+default-jdk
+neovim
+ripgrep
+tar
+unzip
+vim
+wget

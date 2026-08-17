@@ -5,10 +5,27 @@ set -e
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 CONFIG_DIR="$REPO_DIR/config"
 
-sudo pacman -Syu --noconfirm
-sudo pacman -S --needed --noconfirm - < "$CONFIG_DIR/dependencies.txt"
+[ -f /etc/os-release ] && . /etc/os-release
 
-mkdir -p ~/.local/share/fonts ~/templates ~/templates/git ~/.vim/colors ~/.config/nvim/colors ~/.config/nvim
+case "${ID} ${ID_LIKE}" in
+    *arch*)
+        sudo pacman -Syu --noconfirm
+        sudo pacman -S --needed --noconfirm - < "$CONFIG_DIR/dependencies-arch.txt" 2>/dev/null || sudo pacman -S --needed --noconfirm - < "$CONFIG_DIR/dependencies.txt"
+        ;;
+    *fedora*|*nobara*)
+        sudo dnf update -y
+        sudo dnf install -y $(cat "$CONFIG_DIR/dependencies-fedora.txt")
+        ;;
+    *ubuntu*|*debian*|*pop*|*mint*)
+        sudo apt-get update -y
+        sudo apt-get install -y $(cat "$CONFIG_DIR/dependencies-ubuntu.txt")
+        ;;
+    *)
+        exit 1
+        ;;
+esac
+
+mkdir -p ~/.local/share/fonts ~/templates ~/templates/git ~/.vim/colors ~/.config/nvim/colors ~/.config/nvim ~/.local/share/fonts
 
 cp "$CONFIG_DIR/.bash_profile" ~/.bash_profile
 cp "$CONFIG_DIR/.bashrc" ~/.bashrc

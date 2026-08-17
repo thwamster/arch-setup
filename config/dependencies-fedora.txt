@@ -1,0 +1,15 @@
+@development-tools
+btop
+cmake
+curl
+ffmpeg
+fzf
+git
+github-cli
+java-latest-openjdk-devel
+neovim
+ripgrep
+tar
+unzip
+vim
+wget

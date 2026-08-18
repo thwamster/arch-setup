@@ -12,8 +12,7 @@ case "${ID} ${ID_LIKE}" in
         sudo pacman -Syu --noconfirm
         sudo pacman -S --needed --noconfirm - < "$CONFIG_DIR/dependencies-arch.txt" 2>/dev/null || sudo pacman -S --needed --noconfirm - < "$CONFIG_DIR/dependencies.txt"
         ;;
-    *fedora*|*nobara*)
-        sudo dnf update -y
+    *nobara*)
         sudo dnf install -y $(cat "$CONFIG_DIR/dependencies-fedora.txt")
         ;;
     *ubuntu*|*debian*|*pop*|*mint*)
